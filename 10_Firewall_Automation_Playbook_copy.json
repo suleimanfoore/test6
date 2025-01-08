@@ -156,7 +156,7 @@
                     "targetPort": "43_in"
                 }
             ],
-            "hash": "d8321c90f3e356e934088a42a6f09628194595ba",
+            "hash": "4e634821f39c7f00403a97fe226406dc16d14051",
             "nodes": {
                 "0": {
                     "data": {
@@ -172,7 +172,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 360,
-                    "y": -1.9184653865522705e-13
+                    "y": -2.5579538487363607e-13
                 },
                 "1": {
                     "data": {
@@ -579,7 +579,7 @@
                         "functionId": 2,
                         "functionName": "grenke_analyst_decision",
                         "id": "45",
-                        "message": "SOC Comment:\n{1}\n---------------\n{0}",
+                        "message": "SOC Comment:\n{1}\n-------------\n{0}",
                         "parameters": [
                             "format_output:formatted_data",
                             "soc_analyst_decision:action_result.summary.responses.1"
@@ -956,7 +956,7 @@
         "schema": "5.0.15",
         "version": "6.3.1.176"
     },
-    "create_time": "2024-12-02T17:56:01.163539+00:00",
+    "create_time": "2025-01-08T00:46:40.466363+00:00",
     "draft_mode": false,
     "labels": [
         "firewall-automation"

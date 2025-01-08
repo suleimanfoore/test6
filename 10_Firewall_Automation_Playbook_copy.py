@@ -287,8 +287,8 @@ def send_email_3(action=None, success=None, container=None, results=None, handle
                 "to": "mariocasimirogafas@mariocasimirogafas.onmicrosoft.com",
                 "bcc": "",
                 "body": body_formatted_string,
-                "subject": "Firewall Exception Requested",
                 "from": "mokularczyk@splunk.com",
+                "subject": "Firewall Exception Requested",
                 "context": {'artifact_id': soc_analyst_decision_result_item[1]},
             })
 
@@ -315,7 +315,7 @@ def grenke_analyst_decision(action=None, success=None, container=None, results=N
 
     user = None
     role = "Analyst Decision"
-    message = """SOC Comment:\n{1}\n---------------\n{0}"""
+    message = """SOC Comment:\n{1}\n-------------\n{0}"""
 
     # parameter list for template variable replacement
     parameters = [
