@@ -1,0 +1,965 @@
+{
+    "blockly": false,
+    "blockly_xml": "<xml></xml>",
+    "category": "Uncategorized",
+    "coa": {
+        "data": {
+            "description": "Accepts Url and does reputation analysis on the object.  The reputation analysis can help detect and prevent potential malware attacks by analyzing the trustworthiness of the url. This playbook is used for request, that come in when users cannot access speicific websites.",
+            "edges": [
+                {
+                    "id": "port_16_to_port_20",
+                    "sourceNode": "16",
+                    "sourcePort": "16_out",
+                    "targetNode": "20",
+                    "targetPort": "20_in"
+                },
+                {
+                    "id": "port_12_to_port_16",
+                    "sourceNode": "12",
+                    "sourcePort": "12_out",
+                    "targetNode": "16",
+                    "targetPort": "16_in"
+                },
+                {
+                    "id": "port_0_to_port_31",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "31",
+                    "targetPort": "31_in"
+                },
+                {
+                    "id": "port_33_to_port_34",
+                    "sourceNode": "33",
+                    "sourcePort": "33_out",
+                    "targetNode": "34",
+                    "targetPort": "34_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_31_to_port_33",
+                    "sourceNode": "31",
+                    "sourcePort": "31_out",
+                    "targetNode": "33",
+                    "targetPort": "33_in"
+                },
+                {
+                    "id": "port_43_to_port_1",
+                    "sourceNode": "43",
+                    "sourcePort": "43_out",
+                    "targetNode": "1",
+                    "targetPort": "1_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 2
+                        }
+                    ],
+                    "id": "port_20_to_port_45",
+                    "sourceNode": "20",
+                    "sourcePort": "20_out",
+                    "targetNode": "45",
+                    "targetPort": "45_in"
+                },
+                {
+                    "id": "port_45_to_port_46",
+                    "sourceNode": "45",
+                    "sourcePort": "45_out",
+                    "targetNode": "46",
+                    "targetPort": "46_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 1
+                        }
+                    ],
+                    "id": "port_46_to_port_47",
+                    "sourceNode": "46",
+                    "sourcePort": "46_out",
+                    "targetNode": "47",
+                    "targetPort": "47_in"
+                },
+                {
+                    "id": "port_34_to_port_12",
+                    "sourceNode": "34",
+                    "sourcePort": "34_out",
+                    "targetNode": "12",
+                    "targetPort": "12_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 1
+                        }
+                    ],
+                    "id": "port_20_to_port_61",
+                    "sourceNode": "20",
+                    "sourcePort": "20_out",
+                    "targetNode": "61",
+                    "targetPort": "61_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 2
+                        }
+                    ],
+                    "id": "port_20_to_port_62",
+                    "sourceNode": "20",
+                    "sourcePort": "20_out",
+                    "targetNode": "62",
+                    "targetPort": "62_in"
+                },
+                {
+                    "id": "port_61_to_port_43",
+                    "sourceNode": "61",
+                    "sourcePort": "61_out",
+                    "targetNode": "43",
+                    "targetPort": "43_in"
+                },
+                {
+                    "id": "port_62_to_port_43",
+                    "sourceNode": "62",
+                    "sourcePort": "62_out",
+                    "targetNode": "43",
+                    "targetPort": "43_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_46_to_port_56",
+                    "sourceNode": "46",
+                    "sourcePort": "46_out",
+                    "targetNode": "56",
+                    "targetPort": "56_in"
+                },
+                {
+                    "id": "port_56_to_port_43",
+                    "sourceNode": "56",
+                    "sourcePort": "56_out",
+                    "targetNode": "43",
+                    "targetPort": "43_in"
+                },
+                {
+                    "id": "port_47_to_port_43",
+                    "sourceNode": "47",
+                    "sourcePort": "47_out",
+                    "targetNode": "43",
+                    "targetPort": "43_in"
+                }
+            ],
+            "hash": "d8321c90f3e356e934088a42a6f09628194595ba",
+            "nodes": {
+                "0": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionName": "on_start",
+                        "id": "0",
+                        "type": "start"
+                    },
+                    "errors": {},
+                    "id": "0",
+                    "type": "start",
+                    "warnings": {},
+                    "x": 360,
+                    "y": -1.9184653865522705e-13
+                },
+                "1": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionName": "on_finish",
+                        "id": "1",
+                        "type": "end"
+                    },
+                    "errors": {},
+                    "id": "1",
+                    "type": "end",
+                    "warnings": {},
+                    "x": 530,
+                    "y": 1930
+                },
+                "12": {
+                    "data": {
+                        "advanced": {
+                            "customName": "format output",
+                            "customNameId": 0,
+                            "drop_none": true,
+                            "join": [],
+                            "notRequiredJoins": [
+                                "playbook_05_Shodan_Reputation_Analysis_2"
+                            ]
+                        },
+                        "functionId": 1,
+                        "functionName": "format_output",
+                        "id": "12",
+                        "parameters": [],
+                        "template": "###REQUEST INFO\n\nUser: user@grenke\nUser Comment: \"test\"\nUrl Category: command-and-control\n\n###ANALYSIS RESULT\n---------------\n[Alienvault] \n\n\n[Virustotal]\n\n\nSOAR analyzed URL(s) using VirusTotal.  The table below shows a summary of the information gathered.\n\n| URL | Normalized Score | Categories | Report Link | Source |\n| --- | --- | --- | --- | --- |\n| `http://www.releasingpotential.com/` | Very_Safe | ['service and philanthropic organizations', 'media sharing'] | https://www.virustotal.com/gui/url/27c150dec12f85bccde8fd76f2d794bfa24b51e82534bacb0be8e737e350e966\n | VirusTotal v3 |\n\nSOAR analyzed Domain(s) using VirusTotal.  The table below shows a summary of the information gathered.\n\n| Domain | Normalized Data | Categories | Report Link | Source |\n| --- | --- | --- | --- | --- |\n| `www.releasingpotential.com` | Very_Safe | [] | https://www.virustotal.com/gui/domain/www.releasingpotential.com | VirusTotal v3 |\n\n\n[Urlscan] \n\n\nSOAR analyzed URL(s) using urlscan.io.  The table below shows a summary of the information gathered.\n\n| URL | Normalized Score | Confidence | Categories | Report Link | \n| --- | --- | --- | --- | --- |\n| `http://www.releasingpotential.com/` | Safe | 0.0 | [] |https://urlscan.io/result/1746ac89-20d0-40a7-bfa9-50037b09565d/ |\n\n[SAA]\n\nSOAR analyzed URL(s) using Splunk Attack Analyzer.  The table below shows a summary of the information gathered.\n\n| URL | Normalized Score | Score Id | Classifications | Report Link | Source |\n| --- | --- | --- | --- | --- | --- |\n| `http://www.releasingpotential.com/` | Unknown | 0 | ['Unknown'] | https://app.eu1.twinwave.io/job/19452bb3-ca01-4a75-88ee-c1c8c9356a89 | Splunk Attack Analyzer (SAA) |\n\nScreenshots associated with the detonated URLs are shown below (if available):\n\n#### http://www.releasingpotential.com/\n![Splunk Attack Analyzer screenshot 19452bb3-ca01-4a75-88ee-c1c8c9356a89 #0.png](/view?id=3056)\n![Splunk Attack Analyzer screenshot 19452bb3-ca01-4a75-88ee-c1c8c9356a89 #1.png](/view?id=3057)\n![Splunk Attack Analyzer screenshot 19452bb3-ca01-4a75-88ee-c1c8c9356a89 #2.png](/view?id=3058)\n![Splunk Attack Analyzer screenshot 19452bb3-ca01-4a75-88ee-c1c8c9356a89 #3.png](/view?id=3059)\n![Splunk Attack Analyzer screenshot 19452bb3-ca01-4a75-88ee-c1c8c9356a89 #4.png](/view?id=3060)\n\n, ",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "12",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 340,
+                    "y": 680
+                },
+                "16": {
+                    "data": {
+                        "advanced": {
+                            "customName": "SOC analyst decision",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "approver": {
+                            "type": "role",
+                            "value": "Analyst Decision"
+                        },
+                        "functionId": 1,
+                        "functionName": "soc_analyst_decision",
+                        "hasExternalApprover": true,
+                        "id": "16",
+                        "message": "{0}\n",
+                        "nestedNodeChildren": [
+                            "44"
+                        ],
+                        "parameters": [
+                            "format_output:formatted_data"
+                        ],
+                        "responseTime": 129600,
+                        "responses": [
+                            {
+                                "required": true,
+                                "responseOptions": [
+                                    "Accept",
+                                    "Decline",
+                                    "Delegate"
+                                ],
+                                "responsePrompt": "Accept, decline or delegate Firewall request?",
+                                "responseType": "customList"
+                            },
+                            {
+                                "required": true,
+                                "responsePrompt": "Reason for Action (When declining, comment is sent to user!)",
+                                "responseType": "message"
+                            }
+                        ],
+                        "samlEnabled": true,
+                        "samlGroupsAllowed": [
+                            "b3f71e0f-b0c7-49a4-acb6-2e88827f9846",
+                            "b6d7424e-4517-42e3-bed3-b8bc51e3bad6"
+                        ],
+                        "type": "prompt"
+                    },
+                    "errors": {},
+                    "id": "16",
+                    "type": "prompt",
+                    "warnings": {},
+                    "x": 340,
+                    "y": 820
+                },
+                "20": {
+                    "data": {
+                        "advanced": {
+                            "customName": "analyst decision result filter",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 0,
+                                        "op": "==",
+                                        "param": "soc_analyst_decision:action_result.summary.responses.0",
+                                        "value": "Accept"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "customName": "soc accept",
+                                "logic": "and"
+                            },
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 1,
+                                        "op": "==",
+                                        "param": "soc_analyst_decision:action_result.summary.responses.0",
+                                        "value": "Decline"
+                                    }
+                                ],
+                                "conditionIndex": 1,
+                                "customName": "soc decline",
+                                "logic": "and"
+                            },
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 2,
+                                        "op": "==",
+                                        "param": "soc_analyst_decision:action_result.summary.responses.0",
+                                        "value": "Delegate"
+                                    }
+                                ],
+                                "conditionIndex": 2,
+                                "customName": "delegate",
+                                "logic": "and"
+                            }
+                        ],
+                        "functionId": 1,
+                        "functionName": "analyst_decision_result_filter",
+                        "id": "20",
+                        "type": "filter"
+                    },
+                    "errors": {},
+                    "id": "20",
+                    "type": "filter",
+                    "warnings": {},
+                    "x": 400,
+                    "y": 1112
+                },
+                "31": {
+                    "data": {
+                        "advanced": {
+                            "customName": "input filter",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 0,
+                                        "op": "!=",
+                                        "param": "artifact:*.cef.requestURL",
+                                        "value": ""
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "customName": "url available",
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            },
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 1,
+                                        "op": "==",
+                                        "param": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "conditionIndex": 1,
+                                "customName": "url not available",
+                                "display": "Else",
+                                "logic": "and",
+                                "type": "else"
+                            }
+                        ],
+                        "functionId": 1,
+                        "functionName": "input_filter",
+                        "id": "31",
+                        "type": "decision"
+                    },
+                    "errors": {},
+                    "id": "31",
+                    "type": "decision",
+                    "warnings": {},
+                    "x": 420,
+                    "y": 148
+                },
+                "33": {
+                    "data": {
+                        "advanced": {
+                            "customName": "add http",
+                            "customNameId": 0,
+                            "description": "Adds \"http://\" to url if its missing to correctly analyse the url in the playbooks.",
+                            "join": [],
+                            "note": "Adds \"http://\" to url if its missing to correctly analyse the url in the playbooks."
+                        },
+                        "functionId": 1,
+                        "functionName": "add_http",
+                        "id": "33",
+                        "inputParameters": [
+                            "artifact:*.cef.requestURL"
+                        ],
+                        "outputVariables": [
+                            "add_http"
+                        ],
+                        "type": "code"
+                    },
+                    "errors": {},
+                    "id": "33",
+                    "type": "code",
+                    "userCode": "    add_http__add_http = []\n    for url in container_artifact_cef_item_0:\n        if not url.startswith(\"http://\") and not url.startswith(\"https://\"):\n            add_http__add_http.append(\"http://\" + url)\n        else:\n            add_http__add_http.append(url)\n",
+                    "warnings": {},
+                    "x": 340,
+                    "y": 328
+                },
+                "34": {
+                    "data": {
+                        "advanced": {
+                            "customName": "extract domain",
+                            "customNameId": 0,
+                            "description": "Extracts domain from url.",
+                            "join": [],
+                            "note": "Extracts domain from url."
+                        },
+                        "functionId": 2,
+                        "functionName": "extract_domain",
+                        "id": "34",
+                        "inputParameters": [
+                            "add_http:custom_function:add_http"
+                        ],
+                        "outputVariables": [
+                            "domain"
+                        ],
+                        "type": "code"
+                    },
+                    "errors": {},
+                    "id": "34",
+                    "type": "code",
+                    "userCode": "\n    from urllib.parse import urlparse\n    extract_domain__domain = urlparse(add_http__add_http[0]).netloc\n\n",
+                    "warnings": {},
+                    "x": 340,
+                    "y": 504
+                },
+                "43": {
+                    "data": {
+                        "advanced": {
+                            "customName": "close event",
+                            "customNameId": 0,
+                            "join": [],
+                            "refreshNotableData": true
+                        },
+                        "functionId": 7,
+                        "functionName": "close_event",
+                        "id": "43",
+                        "loop": {
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "selectMore": false,
+                        "tab": "apis",
+                        "type": "utility",
+                        "utilities": {
+                            "set_status": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "choices": "notableStatus",
+                                        "description": "",
+                                        "label": "status",
+                                        "name": "status",
+                                        "placeholder": "Select status",
+                                        "renderType": "dropdown",
+                                        "required": true
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "container",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "trace",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "set status",
+                                "name": "set_status",
+                                "refreshNotableData": true
+                            }
+                        },
+                        "utilityType": "api",
+                        "values": {
+                            "set_status": {
+                                "_internal": [
+                                    "container",
+                                    "trace"
+                                ],
+                                "status": "closed"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "43",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 510,
+                    "y": 1782
+                },
+                "44": {
+                    "data": {
+                        "action": "send email",
+                        "actionType": "generic",
+                        "advanced": {
+                            "join": []
+                        },
+                        "connector": "SMTP",
+                        "connectorConfigs": [
+                            "localsmtp"
+                        ],
+                        "connectorId": "45bb6f37-4478-499b-b4a3-51ecfa62b78c",
+                        "connectorVersion": "v1",
+                        "functionId": 3,
+                        "functionName": "send_email_3",
+                        "id": "44",
+                        "loop": {
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "nestedNodeParent": "16",
+                        "parameters": {
+                            "bcc": "",
+                            "body": {
+                                "functionId": 3,
+                                "parameters": [
+                                    "soc_analyst_decision:action_result.parameter.secure_link"
+                                ],
+                                "template": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\"><head><meta charset=\"UTF-8\"><meta content=\"width=device-width, initial-scale=1\" name=\"viewport\"><meta name=\"x-apple-disable-message-reformatting\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta content=\"telephone=no\" name=\"format-detection\"><title></title><!--[if (mso 16)]><style type=\"text/css\">a {{text-decoration: none;}}</style><![endif]--><!--[if gte mso 9]><style>sup {{font-size: 100% !important;}}</style><![endif]--><!--[if gte mso 9]><style>img.header {{width: 55px}}</style><![endif]--><!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG></o:AllowPNG><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]--></head><body><div class=\"es-wrapper-color\"><!--[if gte mso 9]><v:background xmlns:v=\"urn:schemas-microsoft-com:vml\" fill=\"t\"><v:fill type=\"tile\" color=\"#ffffff\"></v:fill></v:background><![endif]--><table class=\"es-wrapper\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\"><tbody><tr><td class=\"esd-email-paddings\" valign=\"top\"><table cellpadding=\"0\" cellspacing=\"0\" class=\"es-content esd-header-popover\" align=\"center\"><tbody><tr><td class=\"esd-stripe\" align=\"center\"><table bgcolor=\"#ffffff\" class=\"es-content-body\" align=\"center\" cellpadding=\"0\"   cellspacing=\"0\" width=\"700\"><tbody><tr><td class=\"es-p20t es-p20r es-p20l esd-structure\" align=\"left\"><table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\"><tbody><tr><td width=\"660\" class=\"esd-container-frame\" align=\"center\" valign=\"top\"><table cellpadding=\"5\" cellspacing=\"0\" width=\"100%\"><tbody><tr><td align=\"right\" class=\"esd-block-text\" bgcolor=\"#58817b\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAAD6CAYAAACS/Hj2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAECGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDEgNzkuMTQ2Mjg5OTc3NywgMjAyMy8wNi8yNS0yMzo1NzoxNCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjhlMmM4YTc0LWJiYjQtNGExMC05ZmVhLTU5NGIyZjFkNjQzMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCMjkwMTIyQkM4MjExMUVFOUVDOUEzQzZDQ0FDNTNBQSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCMjkwMTIyQUM4MjExMUVFOUVDOUEzQzZDQ0FDNTNBQSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBJbGx1c3RyYXRvciAyNy45IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InV1aWQ6ZDE1ZTli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\"></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table cellpadding=\"0\" cellspacing=\"0\" class=\"es-content esd-footer-popover\" align=\"center\"><tbody><tr><td class=\"esd-stripe\" align=\"center\"><table bgcolor=\"#ffffff\" class=\"es-content-body\" align=\"center\" cellpadding=\"0\"   cellspacing=\"0\" width=\"700\"><tbody><tr><td class=\"esd-structure es-p20r es-p20l\" align=\"left\"><table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\"><tbody><tr><td width=\"660\" class=\"esd-container-frame\" align=\"center\" valign=\"top\"><table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\"><tbody><tr><td align=\"left\" class=\"esd-block-text\"style=\"padding-left:10px; background-color: #f5fffd;\"><p style=\"color: black; font-family: 'Arial', 'Helvetica', Sans-Serif; font-size: 26px; margin-top: 26px; margin-bottom: 0\">Firewall Exception Requested</p></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td class=\"esd-structure es-p20r es-p20l\" align=\"left\"><table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\"><tbody><tr><td width=\"660\" class=\"esd-container-frame\" align=\"center\" valign=\"top\"><table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\"><tbody><tr><td style=\"background-color: #f5fffd; font-family: 'Arial', 'Helvetica', Sans-Serif; padding-left:10px\"align=\"left\" class=\"esd-block-text\"><p style=\"margin: 0\"><br><br>Hello SOC Team,<br><br>You have been assigned an action 'analyst_decision'.<br><br>To execute the requested action, deny or delegate, click here:<br><br>{0}<br><br>Kind Regards<br>Security-Team<br><br></p></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></div></body></html>"
+                            },
+                            "cc": "",
+                            "from": "mokularczyk@splunk.com",
+                            "subject": "Firewall Exception Requested",
+                            "to": "mariocasimirogafas@mariocasimirogafas.onmicrosoft.com"
+                        },
+                        "requiredParameters": [
+                            {
+                                "data_type": "string",
+                                "field": "to"
+                            },
+                            {
+                                "data_type": "string",
+                                "field": "body"
+                            }
+                        ],
+                        "type": "action"
+                    },
+                    "errors": {},
+                    "id": "44",
+                    "type": "action",
+                    "warnings": {},
+                    "x": 1000,
+                    "y": 1000
+                },
+                "45": {
+                    "data": {
+                        "advanced": {
+                            "customName": "Grenke analyst decision",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "approver": {
+                            "type": "role",
+                            "value": "Analyst Decision"
+                        },
+                        "functionId": 2,
+                        "functionName": "grenke_analyst_decision",
+                        "id": "45",
+                        "message": "SOC Comment:\n{1}\n---------------\n{0}",
+                        "parameters": [
+                            "format_output:formatted_data",
+                            "soc_analyst_decision:action_result.summary.responses.1"
+                        ],
+                        "responseTime": 129600,
+                        "responses": [
+                            {
+                                "required": true,
+                                "responseOptions": [
+                                    "Accept",
+                                    "Decline"
+                                ],
+                                "responsePrompt": "Accept or decline Firewall request?",
+                                "responseType": "customList"
+                            },
+                            {
+                                "required": true,
+                                "responsePrompt": "Reason for Declining (sent to user)",
+                                "responseType": "message"
+                            }
+                        ],
+                        "type": "prompt"
+                    },
+                    "errors": {},
+                    "id": "45",
+                    "type": "prompt",
+                    "warnings": {},
+                    "x": 850,
+                    "y": 1292
+                },
+                "46": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 0,
+                                        "op": "==",
+                                        "param": "grenke_analyst_decision:action_result.summary.responses.0",
+                                        "value": "Accept"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "customName": "grenke accept",
+                                "logic": "and"
+                            },
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 1,
+                                        "op": "==",
+                                        "param": "grenke_analyst_decision:action_result.summary.responses.0",
+                                        "value": "Decline"
+                                    }
+                                ],
+                                "conditionIndex": 1,
+                                "customName": "grenke decline",
+                                "logic": "and"
+                            }
+                        ],
+                        "functionId": 2,
+                        "functionName": "filter_2",
+                        "id": "46",
+                        "type": "filter"
+                    },
+                    "errors": {},
+                    "id": "46",
+                    "type": "filter",
+                    "warnings": {},
+                    "x": 910,
+                    "y": 1454
+                },
+                "47": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 5,
+                        "functionName": "add_comment_5",
+                        "id": "47",
+                        "loop": {
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "selectMore": false,
+                        "tab": "apis",
+                        "type": "utility",
+                        "utilities": {
+                            "comment": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "description": "",
+                                        "label": "comment",
+                                        "name": "comment",
+                                        "placeholder": "Enter a comment",
+                                        "renderType": "datapath",
+                                        "required": true
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "container",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "author",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "trace",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "add comment",
+                                "name": "comment"
+                            }
+                        },
+                        "utilityType": "api",
+                        "values": {
+                            "comment": {
+                                "_internal": [
+                                    "container",
+                                    "author",
+                                    "trace"
+                                ],
+                                "comment": "Grenke declined firewall request"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "47",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 1020,
+                    "y": 1634
+                },
+                "56": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 11,
+                        "functionName": "add_comment_11",
+                        "id": "56",
+                        "loop": {
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "selectMore": false,
+                        "tab": "apis",
+                        "type": "utility",
+                        "utilities": {
+                            "comment": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "description": "",
+                                        "label": "comment",
+                                        "name": "comment",
+                                        "placeholder": "Enter a comment",
+                                        "renderType": "datapath",
+                                        "required": true
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "container",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "author",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "trace",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "add comment",
+                                "name": "comment"
+                            }
+                        },
+                        "utilityType": "api",
+                        "values": {
+                            "comment": {
+                                "_internal": [
+                                    "container",
+                                    "author",
+                                    "trace"
+                                ],
+                                "comment": "Grenke accepted request"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "56",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 680,
+                    "y": 1634
+                },
+                "61": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 14,
+                        "functionName": "add_comment_14",
+                        "id": "61",
+                        "loop": {
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "selectMore": false,
+                        "tab": "apis",
+                        "type": "utility",
+                        "utilities": {
+                            "comment": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "description": "",
+                                        "label": "comment",
+                                        "name": "comment",
+                                        "placeholder": "Enter a comment",
+                                        "renderType": "datapath",
+                                        "required": true
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "container",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "author",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "trace",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "add comment",
+                                "name": "comment"
+                            }
+                        },
+                        "utilityType": "api",
+                        "values": {
+                            "comment": {
+                                "_internal": [
+                                    "container",
+                                    "author",
+                                    "trace"
+                                ],
+                                "comment": "soc decline"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "61",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 0,
+                    "y": 1634
+                },
+                "62": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 15,
+                        "functionName": "add_comment_15",
+                        "id": "62",
+                        "loop": {
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "selectMore": false,
+                        "tab": "apis",
+                        "type": "utility",
+                        "utilities": {
+                            "comment": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "description": "",
+                                        "label": "comment",
+                                        "name": "comment",
+                                        "placeholder": "Enter a comment",
+                                        "renderType": "datapath",
+                                        "required": true
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "container",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "author",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "trace",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "add comment",
+                                "name": "comment"
+                            }
+                        },
+                        "utilityType": "api",
+                        "values": {
+                            "comment": {
+                                "_internal": [
+                                    "container",
+                                    "author",
+                                    "trace"
+                                ],
+                                "comment": "soc accept"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "62",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 340,
+                    "y": 1634
+                }
+            },
+            "notes": "",
+            "origin": {
+                "playbook_id": 2083,
+                "playbook_name": "10_Firewall_Automation_Playbook",
+                "playbook_repo_id": 2,
+                "playbook_repo_name": "local"
+            }
+        },
+        "input_spec": null,
+        "output_spec": null,
+        "playbook_trigger": "artifact_created",
+        "playbook_type": "automation",
+        "python_version": "3",
+        "schema": "5.0.15",
+        "version": "6.3.1.176"
+    },
+    "create_time": "2024-12-02T17:56:01.163539+00:00",
+    "draft_mode": false,
+    "labels": [
+        "firewall-automation"
+    ],
+    "tags": []
+}
